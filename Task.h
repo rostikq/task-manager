@@ -11,10 +11,13 @@ struct Task {
     unsigned int id;
     std::string title;
     bool isDone;
+<<<<<<< HEAD
     void print() const;
 
 
 
+=======
+>>>>>>> a097689cb3974ded2b41c2ed4866dce56256c7d9
 };
 
 
