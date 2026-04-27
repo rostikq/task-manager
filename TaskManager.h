@@ -22,6 +22,10 @@ public:
     void markDone();
 };
 
+void TaskManager::addTask(std::string title) {
+    m_taskMap[nextId] = Task(title);
+    nextId++;
+}
 
 void TaskManager::removeTask(unsigned int id) {
     auto it = m_taskMap.find(id);
@@ -34,10 +38,13 @@ void TaskManager::removeTask(unsigned int id) {
     }
 }
 
-void TaskManager::listTasks() {
-    if (m_taskMap.empty()) {
-        std::cout << "No tasks available.\n";
-        return;
+void TaskManager::listTasks(bool showDone) {
+    for (const auto& task : tasks) {
+        if (showDone || !task.done) {
+            std::cout << "[" << task.id << "] "
+                      << task.title << " - "
+                      << task.description << std::endl;
+        }
     }
     //Who is this
     for (const auto& pair : m_taskMap) {
