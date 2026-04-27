@@ -6,11 +6,9 @@
 #define PPPILAB5_TASKMANAGER_H
 #include <map>
 #include <vector>
-<<<<<<< HEAD
-#include <iostream>
-=======
 
->>>>>>> a097689cb3974ded2b41c2ed4866dce56256c7d9
+#include <iostream>
+
 #include "Task.h"
 
 
@@ -25,7 +23,6 @@ public:
     void markDone();
 };
 
-<<<<<<< HEAD
 void TaskManager::removeTask(unsigned int id) {
     auto it = m_taskMap.find(id);
 
@@ -37,12 +34,5 @@ void TaskManager::removeTask(unsigned int id) {
     }
 }
 
-
-
-
-
-
-=======
->>>>>>> a097689cb3974ded2b41c2ed4866dce56256c7d9
 
 #endif //PPPILAB5_TASKMANAGER_H
