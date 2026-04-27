@@ -22,6 +22,10 @@ public:
     void markDone();
 };
 
+void TaskManager::addTask(std::string title) {
+    m_taskMap[nextId] = Task(title);
+    nextId++;
+}
 
 void TaskManager::removeTask(unsigned int id) {
     auto it = m_taskMap.find(id);
