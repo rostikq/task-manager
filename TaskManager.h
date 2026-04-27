@@ -34,11 +34,15 @@ void TaskManager::removeTask(unsigned int id) {
     }
 }
 
-void TaskManager::listTasks() {
-    if (m_taskMap.empty()) {
-        std::cout << "No tasks available.\n";
-        return;
+void TaskManager::listTasks(bool showDone) {
+    for (const auto& task : tasks) {
+        if (showDone || !task.done) {
+            std::cout << "[" << task.id << "] "
+                      << task.title << " - "
+                      << task.description << std::endl;
+        }
     }
+}
 
     for (const auto& pair : m_taskMap) {
         std::cout << "ID: " << pair.first << " | ";
