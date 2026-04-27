@@ -6,11 +6,8 @@
 #define PPPILAB5_TASKMANAGER_H
 #include <map>
 #include <vector>
-<<<<<<< HEAD
 #include <iostream>
-=======
 
->>>>>>> a097689cb3974ded2b41c2ed4866dce56256c7d9
 #include "Task.h"
 
 
@@ -25,7 +22,7 @@ public:
     void markDone();
 };
 
-<<<<<<< HEAD
+
 void TaskManager::removeTask(unsigned int id) {
     auto it = m_taskMap.find(id);
 
@@ -37,12 +34,18 @@ void TaskManager::removeTask(unsigned int id) {
     }
 }
 
+void TaskManager::listTasks() {
+    if (m_taskMap.empty()) {
+        std::cout << "No tasks available.\n";
+        return;
+    }
+
+    for (const auto& pair : m_taskMap) {
+        std::cout << "ID: " << pair.first << " | ";
+        pair.second.print();
+    }
+}
 
 
-
-
-
-=======
->>>>>>> a097689cb3974ded2b41c2ed4866dce56256c7d9
 
 #endif //PPPILAB5_TASKMANAGER_H
