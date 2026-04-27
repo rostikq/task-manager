@@ -46,8 +46,7 @@ void TaskManager::listTasks(bool showDone) {
                       << task.description << std::endl;
         }
     }
-}
-
+    //Who is this
     for (const auto& pair : m_taskMap) {
         std::cout << "ID: " << pair.first << " | ";
         pair.second.print();
